@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./build",
+        "target": "es6",
+        "sourceMap": true,
+        "declaration": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "strictFunctionTypes": true,
+        "noUnusedParameters": true
+    },
+    "files": [
+        "simtoc.ts"
+    ]
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>SimToc</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Open Sans', sans-serif;
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: normal;
+            font-weight: smaller;
+            color: #4caf50;
+        }
+
+        h1 {
+            border-bottom: 1px solid lightgray;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        [data-href] {
+            opacity: .3;
+            text-decoration: underline;
+            cursor: not-allowed;
+        }
+
+        .space {
+            height: 90vh;
+        }
+
+        .settings {
+            font-family: monospace;
+            border: 1px solid lightgray;
+            padding: 1pt 2pt;
+        }
+
+        .desc {
+            font-style: italic;
+        }
+
+        code {
+            background-color: #333;
+            border-left: .5em solid #555;
+            color:lightgray;
+            padding:.5em 1em;
+            margin-left: 2em;
+        }
+
+        .tag {
+            color:#7cebf9;
+        }
+
+        .key {
+            color:#03a9f4;
+        }
+
+        .value {
+            color: coral;
+        }
+        
+        #forkongithub a {
+            background: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 40px;
+            font-size: 1rem;
+            line-height: 2rem;
+            position: relative;
+            animation: 60s fmogh infinite ease;
+        }
+
+        #forkongithub a::before,
+        #forkongithub a::after {
+            content: "";
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 1px;
+            background: #fff;
+        }
+
+        #forkongithub a::after {
+            bottom: 1px;
+            top: auto;
+        }
+
+        @media screen and (min-width:800px) {
+            #forkongithub {
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 200px;
+                overflow: hidden;
+                height: 200px;
+                z-index: 1;
+            }
+            #forkongithub a {
+                width: 200px;
+                position: absolute;
+                top: 60px;
+                right: -60px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                box-shadow: 2pt 2pt 4pt lightgray;
+            }
+        }
+
+        @keyframes fmogh {
+            0% { background-color:#4caf50; }
+            20% { background-color:#FF9800; }
+            40% { background-color:#03A9F4; }
+            60% { background-color:#673AB7; }
+            80% { background-color:#FFEB3B; }
+        }
+    </style>
+    <script src="build/simtoc.js?r56f2" async></script>
+</head>
+<body>
+    <span id="forkongithub">
+        <a href="https://github.com/ultimateerror">Fork me on GitHub</a>
+    </span>
+    <!--<a href="https://github.com/ultimateerror"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>-->
+
+    <h1>SimToc</h1>
+    <p>A simple &quot;Table of contents&quot; Script</p>
+
+    <h2>Download and Usage</h2>
+    <p>You can either clone/download the Typescript Version and build it by your own or download a already build one <a href="https://raw.githubusercontent.com/downloads/ultimateerror/repository/build/simtoc.js">here</a>.</p>
+    <p>The usage is pretty simple. Just append the script in your HTML document like so:</p>
+    <code>
+        &lt;<span class="tag">script</span> <span class="key">src</span>=<span class="value">"simtoc.js"</span> <span class="key">async</span>&gt;&lt;/<span class="tag">script</span>&gt;
+    </code>
+
+    <h2>Features</h2>
+
+    <h3>Auto-Show / Auto-Hide</h3>
+    <p>By default <strong>SimToc shows and hides automatically</strong>. Thats means it shows a TOC after it's loaded, when scrolling or if the
+        cursor hovers it. It automatically hides itself after a few seconds except when the cursor position is over the TOC.</p>
+
+    <h3>Highly customizable</h3>
+    <p>There are build in settings for the most needed customizations but also for lesser needed ones. For example you can (of
+        course) set a title for the TOC, add a "To Top" link, set a timeout, etc.</p>
+
+    <h3>Fully designable</h3>
+    <p>The design is fully customizable and simple to do so. By default the linked headlines are indented and the TOC is displayed
+        as a fixed box. The target headline will be highlighted for 3 seconds after clicking on a TOC link.</p>
+    <p>All the default CSS Styles are created automatically by default. However if you don't wont or like the default style
+        you can simple disable it.</p>
+
+    <h3>Lightweight and modern</h3>
+    <p>As this is a very simple solution it does not need much code so it's fast and lightweight.</p>
+
+    <h3>No required third party libraries</h3>
+    <p>You do not have to include some libraries to be able to run TOC on the page. No jQuery, no underscore.js, ... just a
+        (modern) browser.</p>
+
+    <h2>Options</h2>
+    <ul>
+        <li>
+            <span class="settings">
+                <span class="key">id</span>:
+                <span class="value">"simtoc"</span>
+            </span> (Type: string)
+            <span class="desc">Sets a different id for the TOC.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">title</span>:
+                <span class="value">"Table of contents"</span>
+            </span> (Type: string)
+            <span class="desc">Sets an own title if you want.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">scrollToTopText</span>:
+                <span class="value">"&amp;uarr;"</span>
+            </span> (Type: string)
+            <span class="desc">Sets a "To Top"-Text. If you don't set one, the "To Top"-link will not be generated.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">timeout</span>:
+                <span class="value">3000</span>
+            </span> (Type: number)
+            <span class="desc">Sets the time in milliseconds for the timeout when the TOC should automatically disappear.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">headlines</span>:
+                <span class="value">['h1', 'h2', 'h3', 'h4', 'h5', 'h6']</span>
+            </span> (Type: string[])
+            <span class="desc">Sets what elements you want to put in the TOC. Keep in mind only HTML Headline Tags will have the automatically
+                indent styled by default.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">autoStyle</span>:
+                <span class="value">true</span>
+            </span> (Type: boolean)
+            <span class="desc">Generated the default CSS.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">showOnPageload</span>:
+                <span class="value">true</span>
+            </span> (Type: boolean)
+            <span class="desc">Shows the TOC directly after the page loaded.</span>
+        </li>
+        <li>
+            <span class="settings">
+                <span class="key">showAllTheTime</span>:
+                <span class="value">false</span>
+            </span> (Type: boolean)
+            <span class="desc">Do not hide the TOC.</span>
+        </li>
+    </ul>
+
+    <div class="space"></div>
+    <p>
+        <em>End of Text</em>
+    </p>
+</body>
+
+</html>
